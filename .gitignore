@@ -22,3 +22,6 @@ go.work
 
 # Ignore arquivos relacionados às chaves de API
 .env
+
+# Ignore arquivos yml - docker.
+*.yml
