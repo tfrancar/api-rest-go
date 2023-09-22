@@ -5,7 +5,6 @@ import (
 
 	"github.com/joho/godotenv"
 	"github.com/tfrancar/api-rest-go/database"
-	// "github.com/tfrancar/api-rest-go/models"
 	"github.com/tfrancar/api-rest-go/routes"
 )
 
@@ -15,11 +14,6 @@ func main() {
 	if err != nil {
 		fmt.Println("Erro ao carregar o arquivo .env", err)
 	}
-	
-	// models.Personalidades = []models.Personalidade{
-	// 	{Id: 1, Nome: "Nome 1", Historia: "Historia 1"},
-	// 	{Id: 2, Nome: "Nome 2", Historia: "Historia 2"},
-	// }
 
 	database.ConectaBancoDeDados()
 
