@@ -16,14 +16,12 @@ func Home(w http.ResponseWriter, _ *http.Request) {
 }
 
 func TodasPersonalidades(w http.ResponseWriter, _ *http.Request) {
-	w.Header().Set("Content-type", "application/json")
 	var array_personalidades []models.Personalidade
 	database.DB.Find(&array_personalidades)
 	json.NewEncoder(w).Encode(array_personalidades)
 }
 
 func RetornaUmaPersonaldiade(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-type", "application/json")
 	vars := mux.Vars(r)
 	id := vars["id"]
 	var personalidade models.Personalidade
@@ -33,7 +31,6 @@ func RetornaUmaPersonaldiade(w http.ResponseWriter, r *http.Request) {
 }
 
 func CriarUmaNovaPersonalidade(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-type", "application/json")
 	var novaPersonalidade models.Personalidade
 	json.NewDecoder(r.Body).Decode(&novaPersonalidade)
 	database.DB.Create(&novaPersonalidade)
@@ -42,7 +39,6 @@ func CriarUmaNovaPersonalidade(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeletaUmaPersonalidade(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-type", "application/json")
 	vars := mux.Vars(r)
 	id := vars["id"]
 	var personalidade models.Personalidade
